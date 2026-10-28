@@ -82,9 +82,9 @@ onMounted(() => {
           <img
             src="/belal-raed.webp"
             :alt="t(ui.hero.photoAlt)"
-            width="765"
-            height="921"
-            class="aspect-[4/5] w-full object-cover object-top mix-blend-multiply"
+            width="880"
+            height="1100"
+            class="aspect-[4/5] w-full object-cover object-top"
             fetchpriority="high"
           />
         </div>
