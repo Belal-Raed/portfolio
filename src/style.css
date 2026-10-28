@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #f6f6f8;
+  --surface: #ffffff;
+  --surface-2: #eeeef2;
+  --ink: #0b0b12;
+  --text: #3b3b47;
+  --muted: #71717f;
+  --line: #e4e4ea;
+  --accent: #3b5bfd;
+  --accent-2: #8b5cf6;
+  --accent-ink: #ffffff;
+  --shadow: 0 1px 2px rgb(16 16 30 / 0.04), 0 8px 24px -8px rgb(16 16 30 / 0.1);
+  --shadow-lg: 0 2px 4px rgb(16 16 30 / 0.04), 0 24px 60px -20px rgb(16 16 30 / 0.22);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #09090d;
+  --surface: #13131a;
+  --surface-2: #1b1b24;
+  --ink: #f5f5f8;
+  --text: #c6c6d0;
+  --muted: #8b8b98;
+  --line: #262630;
+  --accent: #6b84ff;
+  --accent-2: #a78bfa;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -8px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 2px 4px rgb(0 0 0 / 0.3), 0 24px 60px -20px rgb(0 0 0 / 0.7);
+  color-scheme: dark;
+}
+
+/* Accent options (compared live with the picker) */
+html[data-accent='emerald'] { --accent: #0e9f6e; --accent-2: #14b8a6; }
+html[data-accent='violet'] { --accent: #7c3aed; --accent-2: #db2777; }
+html[data-accent='orange'] { --accent: #f2601d; --accent-2: #f59e0b; }
+.dark[data-accent='emerald'] { --accent: #34d399; --accent-2: #2dd4bf; --accent-ink: #062b1f; }
+.dark[data-accent='violet'] { --accent: #a78bfa; --accent-2: #f472b6; --accent-ink: #1e1036; }
+.dark[data-accent='orange'] { --accent: #fb8a4a; --accent-2: #fbbf24; --accent-ink: #2a1205; }
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-ink: var(--accent-ink);
+  --shadow-card: var(--shadow);
+  --shadow-float: var(--shadow-lg);
+
+  --font-sans: 'Inter Variable', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[lang='ar'] body {
+  line-height: 1.8;
+}
+/* Arabic glyphs don't like negative tracking */
+html[lang='ar'] [class*='tracking-'] {
+  letter-spacing: 0 !important;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility text-gradient {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+@keyframes ping-soft {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

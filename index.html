@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belal Raed — Backend Engineer</title>
+    <meta
+      name="description"
+      content="Belal Raed — Laravel backend engineer and co-founder of ROOT. REST APIs, queues, realtime systems, WhatsApp & AI integrations. Open to remote & freelance work."
+    />
+    <meta name="theme-color" content="#F6F6F8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Belal Raed — Backend Engineer" />
+    <meta
+      property="og:description"
+      content="I build smart systems that run your business — WhatsApp ordering with AI, and management systems for clinics, schools and restaurants."
+    />
+    <meta property="og:image" content="/og-photo.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply saved theme + language before paint to avoid a flash.
+      // ?lang=ar / ?theme=dark in the URL win, so a shared link opens as intended.
+      try {
+        var params = new URLSearchParams(location.search)
+        var theme = params.get('theme') || localStorage.getItem('theme')
+        if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        }
+        if ((params.get('lang') || localStorage.getItem('locale')) === 'ar') {
+          document.documentElement.lang = 'ar'
+          document.documentElement.dir = 'rtl'
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
