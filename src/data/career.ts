@@ -22,23 +22,23 @@ export const services: { icon: IconName; title: Localized; body: Localized }[] =
     icon: 'bolt',
     title: { en: 'Automation & integrations', ar: 'أتمتة وربط أنظمة' },
     body: {
-      en: 'Connect your tools, messaging and AI so repetitive work happens on its own — and your team focuses on what matters.',
-      ar: 'بربطلك أدواتك والرسائل والذكاء الاصطناعي، عشان الشغل المتكرر يصير لحاله، وفريقك يركّز على المهم.',
+      en: 'Connect your tools, messaging and AI so repetitive work happens on its own.',
+      ar: 'بربطلك أدواتك والرسائل والذكاء الاصطناعي، عشان الشغل المتكرر يصير لحاله.',
     },
   },
   {
     icon: 'wrench',
     title: { en: 'Support & new features', ar: 'دعم وتطوير مستمر' },
     body: {
-      en: 'Already have a system? I fix problems, add features and improve it — and I stay with you after launch.',
-      ar: 'عندك نظام جاهز؟ بصلّح المشاكل، وبضيف ميزات، وبحسّنه، وبضل معك بعد الإطلاق.',
+      en: 'Already have a system? I fix problems, add features and improve it.',
+      ar: 'عندك نظام جاهز؟ بصلّح المشاكل، وبضيف ميزات، وبحسّنه.',
     },
   },
 ]
 
 export const process: { title: Localized; body: Localized }[] = [
   {
-    title: { en: 'We talk', ar: 'نحكي' },
+    title: { en: 'We talk', ar: 'منحكي' },
     body: {
       en: 'You tell me about your business and the problem. I listen and ask the right questions.',
       ar: 'بتحكيلي عن شغلك والمشكلة، وأنا بسمع وبسأل الأسئلة الصح.',
@@ -92,15 +92,4 @@ export const journey: { role: Localized; org: Localized; from: string; to: strin
     from: '2022',
     to: '2022',
   },
-]
-
-export const industries: Localized[] = [
-  { en: 'Restaurants', ar: 'المطاعم' },
-  { en: 'Dental clinics', ar: 'عيادات الأسنان' },
-  { en: 'Schools', ar: 'المدارس' },
-  { en: 'Public services', ar: 'الخدمات الحكومية' },
-  { en: 'E-commerce', ar: 'التجارة الإلكترونية' },
-  { en: 'Bookings', ar: 'الحجوزات' },
-  { en: 'Finance', ar: 'المالية' },
-  { en: 'HR & staff', ar: 'إدارة الموظفين' },
 ]

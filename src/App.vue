@@ -3,7 +3,6 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { revealOnScroll, startSmoothScroll } from '@/composables/useMotion'
 import SiteHeader from './components/SiteHeader.vue'
 import HeroSection from './components/HeroSection.vue'
-import IndustriesStrip from './components/IndustriesStrip.vue'
 import ServicesSection from './components/ServicesSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ProcessSection from './components/ProcessSection.vue'
@@ -26,7 +25,6 @@ onBeforeUnmount(() => stopReveal())
   <SiteHeader />
   <main ref="main">
     <HeroSection />
-    <IndustriesStrip />
     <ServicesSection />
     <ProjectsSection />
     <ProcessSection />

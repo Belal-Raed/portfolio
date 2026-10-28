@@ -32,10 +32,10 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
   <header class="fixed inset-x-0 top-0 z-40 px-3 pt-3 md:pt-4">
     <div
       class="mx-auto flex h-14 max-w-5xl items-center justify-between gap-3 rounded-full border px-2.5 ps-4 transition-all duration-300"
-      :class="scrolled || open ? 'border-line bg-surface/85 shadow-card backdrop-blur-xl' : 'border-transparent bg-transparent'"
+      :class="scrolled || open ? 'border-line bg-surface/90 backdrop-blur-md' : 'border-transparent bg-transparent'"
     >
       <a href="#top" class="flex items-center gap-2" @click.prevent="go('#top')">
-        <span class="grid size-8 place-items-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-sm font-extrabold text-white">B</span>
+        <span class="grid size-8 place-items-center rounded-lg bg-ink text-sm font-bold text-bg">B</span>
         <span class="font-bold text-ink">{{ t(ui.name) }}</span>
       </a>
 
@@ -68,7 +68,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
         </button>
         <a
           href="#contact"
-          class="hidden rounded-full bg-ink px-4 py-2 text-sm font-semibold text-bg transition hover:opacity-85 sm:inline-flex"
+          class="hidden rounded-full bg-ink px-4 py-2 text-sm font-semibold text-bg transition-opacity hover:opacity-80 sm:inline-flex"
           @click.prevent="go('#contact')"
           >{{ t(ui.nav.cta) }}</a
         >
@@ -90,7 +90,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
       enter-active-class="transition duration-200"
       leave-active-class="transition duration-150"
     >
-      <nav v-if="open" class="mx-auto mt-2 max-w-5xl rounded-3xl border border-line bg-surface p-2 shadow-float md:hidden" aria-label="Mobile">
+      <nav v-if="open" class="mx-auto mt-2 max-w-5xl rounded-3xl border border-line bg-surface p-2 md:hidden" aria-label="Mobile">
         <a
           v-for="link in links"
           :key="link.id"

@@ -7,76 +7,59 @@ export const ui = {
 
   nav: {
     services: l('Services', 'الخدمات'),
-    work: l('Work', 'الأعمال'),
+    work: l('Projects', 'المشاريع'),
     about: l('About', 'عنّي'),
     contact: l('Contact', 'تواصل'),
-    cta: l("Let's talk", 'تواصل معي'),
+    cta: l('Get in touch', 'تواصل معي'),
     menu: l('Menu', 'القائمة'),
     theme: l('Toggle dark mode', 'تبديل الوضع الليلي'),
     lang: l('العربية', 'English'),
   },
 
   hero: {
-    badge: l('Available for new projects', 'متاح لمشاريع جديدة'),
-    title1: l('I build smart systems', 'أبني أنظمة ذكية'),
-    title2: l('that run your business.', 'تدير شغلك عنك.'),
-    subtitle: l(
-      'From taking orders on WhatsApp with AI, to complete management systems for clinics, schools and restaurants — built in Arabic, ready from day one.',
-      'من استقبال الطلبات على الواتساب بالذكاء الاصطناعي، إلى أنظمة إدارة متكاملة للعيادات والمدارس والمطاعم. مبنية بالعربي وجاهزة من أول يوم.',
+    intro: l('Belal Raed — software developer, Gaza', 'بلال رائد — مطوّر برمجيات، غزة'),
+    title: l(
+      'I build the software that runs clinics, schools and restaurants.',
+      'أبني البرامج اللي بتشغّل العيادات والمدارس والمطاعم.',
     ),
-    primary: l('Start your project', 'ابدأ مشروعك'),
-    secondary: l('Chat on WhatsApp', 'راسلني واتساب'),
-    trust1: l('Building since 2022', 'أبني أنظمة منذ 2022'),
-    trust2: l('Co-founder of ROOT', 'شريك مؤسس في ROOT'),
-    trust3: l('Projects from Palestine to Oman', 'مشاريع من فلسطين لعُمان'),
-    floatOrder: l('New order on WhatsApp', 'طلب جديد على الواتساب'),
-    floatOrderSub: l('Confirmed automatically', 'تم تأكيده تلقائياً'),
-    floatLive: l('3 products live', '3 منتجات تعمل الآن'),
-    floatArabic: l('Arabic-first', 'عربي أولاً'),
+    subtitle: l(
+      "Since 2022 I've been building WhatsApp ordering, management systems and the AI that ties them together — mostly for businesses that work in Arabic. I'm also a co-founder of ROOT.",
+      'من 2022 وأنا ببني أنظمة طلبات على الواتساب، وأنظمة إدارة، والذكاء الاصطناعي اللي بيربطهم ببعض، وأغلبها لشركات شغلها بالعربي. وأنا كمان شريك مؤسس في ROOT.',
+    ),
+    primary: l('Get in touch', 'تواصل معي'),
+    secondary: l('WhatsApp', 'واتساب'),
     photoAlt: l('Belal Raed', 'بلال رائد'),
   },
 
-  industries: {
-    title: l('Systems built for', 'أنظمة بنيتها لـ'),
-  },
-
   services: {
-    eyebrow: l('Services', 'الخدمات'),
-    title: l('What I can build for you', 'شو بقدر أبنيلك'),
-    subtitle: l(
-      'Practical software that saves your team time and keeps your customers happy.',
-      'برامج عملية بتوفّر وقت فريقك وبتخلّي عملاءك مبسوطين.',
-    ),
+    title: l('What I work on', 'شو بشتغل'),
   },
 
   work: {
-    eyebrow: l('Selected work', 'أعمال مختارة'),
-    title: l('Real systems, used by real businesses', 'أنظمة حقيقية تستخدمها شركات حقيقية'),
+    title: l('Projects', 'المشاريع'),
     subtitle: l(
-      'Not mockups — these are running every day for clinics, schools, restaurants and public services.',
-      'مش مجرد تصاميم، هاي أنظمة شغّالة كل يوم عند عيادات ومدارس ومطاعم وجهات خدمية.',
+      "Some of the systems I've built that are in use today.",
+      'بعض الأنظمة اللي بنيتها وشغّالة اليوم.',
     ),
-    live: l('Live', 'يعمل الآن'),
+    live: l('In use', 'قيد الاستخدام'),
     ready: l('Ready to launch', 'جاهز للإطلاق'),
   },
 
   process: {
-    eyebrow: l('How it works', 'كيف نشتغل'),
-    title: l('Simple, clear, no surprises', 'بسيط وواضح وبدون مفاجآت'),
+    title: l('How a project goes', 'كيف بيمشي المشروع'),
   },
 
   about: {
-    eyebrow: l('About me', 'عنّي'),
-    title: l("Hi, I'm Belal 👋", 'أهلاً، أنا بلال 👋'),
+    title: l('About', 'عنّي'),
     body1: l(
-      "I'm a software developer from Palestine, building business systems since 2022. I co-founded ROOT, a startup that makes Arabic-first software for companies across the Middle East and North Africa.",
-      'مطوّر برمجيات من فلسطين، أبني أنظمة للشركات منذ 2022. وأنا شريك مؤسس في ROOT، شركة ناشئة تصنع برامج عربية أولاً للشركات في الشرق الأوسط وشمال أفريقيا.',
+      "I'm a software developer from Gaza. I've been building business systems with Laravel since 2022, and I co-founded ROOT, where we make Arabic-first software for companies across the Middle East and North Africa.",
+      'أنا مطوّر برمجيات من غزة. ببني أنظمة للشركات بـ Laravel من 2022، وشاركت في تأسيس ROOT، وهناك بنعمل برامج عربية أولاً لشركات بالشرق الأوسط وشمال أفريقيا.',
     ),
     body2: l(
-      "I take a project from the first conversation to launch day — and I stay after it. My goal is simple: software that works, that your team actually enjoys using, and that keeps working.",
-      'بمسك المشروع من أول حديث بيننا لحد يوم الإطلاق، وبضل معك بعده. هدفي بسيط: نظام شغّال، فريقك بيحب يستخدمه، وبيضل شغّال.',
+      'I usually handle a project from the first conversation through to launch, and I keep maintaining it afterwards.',
+      'عادةً بمسك المشروع من أول حديث لحد الإطلاق، وبضل أتابعه وأطوّره بعدها.',
     ),
-    journey: l('My journey', 'مسيرتي'),
+    journey: l('Experience', 'الخبرة'),
     present: l('Present', 'الآن'),
     education: l('Education', 'التعليم'),
     degree: l("Bachelor's in Web Computing", 'بكالوريوس حوسبة الويب'),
@@ -88,23 +71,21 @@ export const ui = {
   },
 
   contact: {
-    eyebrow: l('Contact', 'تواصل'),
-    title: l('Have an idea? Let’s build it.', 'عندك فكرة؟ خلّينا نبنيها.'),
+    title: l("Let's talk about your project", 'خلّينا نحكي عن مشروعك'),
     subtitle: l(
-      'Tell me about your business and what you need. I reply personally.',
-      'احكيلي عن شغلك وشو بتحتاج، وبرد عليك بنفسي.',
+      'Message me on WhatsApp or send an email, and tell me a bit about what you need.',
+      'راسلني على الواتساب أو ابعتلي إيميل، واحكيلي شوي عن اللي بتحتاجه.',
     ),
-    whatsapp: l('Chat on WhatsApp', 'راسلني واتساب'),
-    whatsappSub: l('Fastest way to reach me', 'أسرع طريقة للتواصل'),
-    email: l('Send an email', 'أرسل إيميل'),
+    whatsapp: l('WhatsApp', 'واتساب'),
+    email: l('Email', 'الإيميل'),
     name: l('Your name', 'اسمك'),
     contactField: l('Email or phone', 'الإيميل أو رقم الهاتف'),
     message: l('What do you need?', 'شو بتحتاج؟'),
-    messagePh: l('e.g. A WhatsApp ordering system for my restaurant…', 'مثلاً: نظام طلبات واتساب لمطعمي…'),
-    send: l('Send message', 'أرسل الرسالة'),
+    messagePh: l('e.g. A WhatsApp ordering system for my restaurant', 'مثلاً: نظام طلبات واتساب لمطعمي'),
+    send: l('Send by email', 'أرسل بالإيميل'),
     sendWa: l('Send on WhatsApp', 'أرسل على الواتساب'),
     sending: l('Sending…', 'جارٍ الإرسال…'),
-    ok: l("Thanks! Your message arrived — I'll get back to you soon.", 'شكراً! وصلتني رسالتك وبرد عليك قريباً.'),
+    ok: l("Thanks, your message arrived. I'll get back to you soon.", 'شكراً، وصلتني رسالتك وبرد عليك قريباً.'),
     mailOpened: l('Opening your email app with the message ready…', 'جارٍ فتح تطبيق البريد والرسالة جاهزة…'),
     failed: l("Couldn't send right now — please try WhatsApp.", 'ما زبط الإرسال هلأ، جرّب الواتساب لو سمحت.'),
     required: l('Please fill in your name and message.', 'عبّي اسمك والرسالة لو سمحت.'),
@@ -112,8 +93,7 @@ export const ui = {
   },
 
   footer: {
-    rights: l('All rights reserved.', 'جميع الحقوق محفوظة.'),
-    made: l('Made with care in Palestine', 'صُنع بحب في فلسطين'),
+    place: l('Gaza, Palestine', 'غزة، فلسطين'),
     top: l('Back to top', 'للأعلى'),
   },
 }

@@ -71,18 +71,14 @@ const field =
 </script>
 
 <template>
-  <section id="contact" class="container-page py-24 md:py-32">
+  <section id="contact" class="container-page py-16 md:py-24">
     <div
       data-reveal
-      class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-accent to-accent-2 p-7 text-white shadow-float sm:p-10 md:p-14"
+      class="rounded-3xl bg-accent p-7 text-white sm:p-10 md:p-14"
     >
-      <div class="pointer-events-none absolute -end-24 -top-24 size-80 rounded-full bg-white/15 blur-3xl" aria-hidden="true" />
-      <div class="pointer-events-none absolute -bottom-32 -start-24 size-96 rounded-full bg-black/10 blur-3xl" aria-hidden="true" />
-
-      <div class="relative grid gap-12 lg:grid-cols-2">
+      <div class="grid gap-12 lg:grid-cols-2">
         <div>
-          <p class="inline-flex rounded-full bg-white/15 px-3.5 py-1 text-sm font-semibold">{{ t(ui.contact.eyebrow) }}</p>
-          <h2 class="mt-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">{{ t(ui.contact.title) }}</h2>
+          <h2 class=" text-3xl font-bold leading-tight tracking-tight md:text-4xl">{{ t(ui.contact.title) }}</h2>
           <p class="mt-4 max-w-md text-lg text-white/80">{{ t(ui.contact.subtitle) }}</p>
 
           <div class="mt-10 space-y-3">
@@ -90,12 +86,11 @@ const field =
               :href="whatsappLink()"
               target="_blank"
               rel="noopener"
-              class="group flex items-center gap-4 rounded-2xl bg-white p-4 text-neutral-900 shadow-float transition hover:-translate-y-0.5"
+              class="group flex items-center gap-4 rounded-2xl bg-white p-4 text-neutral-900 transition-opacity hover:opacity-90"
             >
               <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white"><AppIcon name="whatsapp" :size="24" /></span>
               <span class="flex-1">
                 <span class="block font-bold">{{ t(ui.contact.whatsapp) }}</span>
-                <span class="block text-sm text-neutral-500">{{ t(ui.contact.whatsappSub) }}</span>
               </span>
               <span class="hidden text-sm font-semibold text-neutral-500 sm:block" dir="ltr">{{ site.phone }}</span>
             </a>
@@ -112,7 +107,7 @@ const field =
           </div>
         </div>
 
-        <form class="space-y-4 rounded-3xl bg-black/10 p-5 ring-1 ring-white/15 backdrop-blur sm:p-7" novalidate @submit.prevent="sendEmail">
+        <form class="space-y-4 rounded-3xl bg-black/10 p-5 ring-1 ring-white/15 sm:p-7" novalidate @submit.prevent="sendEmail">
           <label class="block">
             <span class="mb-1.5 block text-sm font-semibold text-white/85">{{ t(ui.contact.name) }}</span>
             <input v-model="form.name" type="text" autocomplete="name" :class="field" />
@@ -139,13 +134,13 @@ const field =
             <button
               type="submit"
               :disabled="sending"
-              class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-neutral-900 transition hover:-translate-y-0.5 disabled:opacity-60"
+              class="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3.5 font-bold text-neutral-900 transition-opacity hover:opacity-90 disabled:opacity-60"
             >
               <AppIcon name="mail" :size="18" />{{ sending ? t(ui.contact.sending) : t(ui.contact.send) }}
             </button>
             <button
               type="button"
-              class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-emerald-500 px-6 py-3.5 font-bold text-white transition hover:-translate-y-0.5"
+              class="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-emerald-500 px-6 py-3.5 font-bold text-white transition-opacity hover:opacity-90"
               @click="sendWhatsapp"
             >
               <AppIcon name="whatsapp" :size="18" />{{ t(ui.contact.sendWa) }}

@@ -27,13 +27,13 @@ export const projects: Project[] = [
       ar: 'مساعد ذكي يستقبل الطلبات داخل واتساب وإنستغرام وماسنجر',
     },
     description: {
-      en: 'Customers just send a message. ChatCore understands it, asks for anything missing, confirms the price and sends a clean order to one dashboard — no staff needed to answer chats.',
-      ar: 'العميل بس يبعت رسالة، وChatCore بيفهمها، وبيسأل عن أي تفصيل ناقص، وبيأكد السعر، وبيبعت الطلب مرتب على لوحة تحكم واحدة. من غير ما تحتاج موظف يرد على المحادثات.',
+      en: 'Customers just send a message. ChatCore understands it, asks for anything missing, confirms the price and sends a clean order to one dashboard, without someone sitting on the chats all day.',
+      ar: 'العميل بس يبعت رسالة، وChatCore بيفهمها، وبيسأل عن أي تفصيل ناقص، وبيأكد السعر، وبيبعت الطلب مرتب على لوحة تحكم واحدة. من غير ما يكون في حدا قاعد على المحادثات طول اليوم.',
     },
     highlights: [
       { en: 'Works 24/7', ar: 'شغّال 24/7' },
       { en: '3 channels, 1 inbox', ar: '3 قنوات بصندوق واحد' },
-      { en: 'AI-powered', ar: 'بالذكاء الاصطناعي' },
+      { en: 'Unified dashboard', ar: 'لوحة تحكم موحّدة' },
     ],
     cover: 'chat',
     images: [],
