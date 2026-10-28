@@ -34,14 +34,6 @@
   color-scheme: dark;
 }
 
-/* Accent options (compared live with the picker) */
-html[data-accent='emerald'] { --accent: #0e9f6e; --accent-2: #14b8a6; }
-html[data-accent='violet'] { --accent: #7c3aed; --accent-2: #db2777; }
-html[data-accent='orange'] { --accent: #f2601d; --accent-2: #f59e0b; }
-.dark[data-accent='emerald'] { --accent: #34d399; --accent-2: #2dd4bf; --accent-ink: #062b1f; }
-.dark[data-accent='violet'] { --accent: #a78bfa; --accent-2: #f472b6; --accent-ink: #1e1036; }
-.dark[data-accent='orange'] { --accent: #fb8a4a; --accent-2: #fbbf24; --accent-ink: #2a1205; }
-
 @theme inline {
   --color-bg: var(--bg);
   --color-surface: var(--surface);

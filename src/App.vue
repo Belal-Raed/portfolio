@@ -10,9 +10,7 @@ import ProcessSection from './components/ProcessSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
-import AccentPicker from './components/AccentPicker.vue'
 
-const isDev = import.meta.env.DEV
 const main = ref<HTMLElement>()
 let stopReveal = () => {}
 
@@ -36,5 +34,4 @@ onBeforeUnmount(() => stopReveal())
     <ContactSection />
   </main>
   <SiteFooter />
-  <AccentPicker v-if="isDev" />
 </template>
