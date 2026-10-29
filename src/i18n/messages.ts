@@ -13,6 +13,8 @@ export const ui = {
     cta: l('Get in touch', 'تواصل معي'),
     menu: l('Menu', 'القائمة'),
     theme: l('Toggle dark mode', 'تبديل الوضع الليلي'),
+    lightMode: l('Light mode', 'الوضع الفاتح'),
+    darkMode: l('Dark mode', 'الوضع الداكن'),
     lang: l('العربية', 'English'),
   },
 

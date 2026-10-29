@@ -3,7 +3,6 @@ import { reactive, ref } from 'vue'
 import { useI18n } from '@/i18n'
 import { ui } from '@/i18n/messages'
 import { site, whatsappLink } from '@/config/site'
-import AppIcon from './AppIcon.vue'
 
 const { t } = useI18n()
 
@@ -67,87 +66,56 @@ async function sendEmail() {
 }
 
 const field =
-  'w-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3.5 text-white placeholder:text-white/55 transition focus:border-white/60 focus:bg-white/15 focus:outline-none'
+  'w-full border border-muted bg-surface px-4 py-3 text-ink placeholder:text-muted transition-colors duration-150 hover:border-ink focus:border-accent'
 </script>
 
 <template>
   <section id="contact" class="container-page py-16 md:py-24">
-    <div
-      data-reveal
-      class="rounded-3xl bg-accent p-7 text-white sm:p-10 md:p-14"
-    >
-      <div class="grid gap-12 lg:grid-cols-2">
-        <div>
-          <h2 class=" text-3xl font-bold leading-tight tracking-tight md:text-4xl">{{ t(ui.contact.title) }}</h2>
-          <p class="mt-4 max-w-md text-lg text-white/80">{{ t(ui.contact.subtitle) }}</p>
+    <div class="grid gap-12 border-t border-line pt-10 md:grid-cols-2 md:gap-14 md:pt-14">
+      <div>
+        <h2 class="tick text-[clamp(2.1rem,4.6vw,3.4rem)]">{{ t(ui.contact.title) }}</h2>
+        <p class="mt-5 text-lg text-muted">{{ t(ui.contact.subtitle) }}</p>
 
-          <div class="mt-10 space-y-3">
-            <a
-              :href="whatsappLink()"
-              target="_blank"
-              rel="noopener"
-              class="group flex items-center gap-4 rounded-2xl bg-white p-4 text-neutral-900 transition-opacity hover:opacity-90"
-            >
-              <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-emerald-500 text-white"><AppIcon name="whatsapp" :size="24" /></span>
-              <span class="flex-1">
-                <span class="block font-bold">{{ t(ui.contact.whatsapp) }}</span>
-              </span>
-              <span class="hidden text-sm font-semibold text-neutral-500 sm:block" dir="ltr">{{ site.phone }}</span>
-            </a>
-            <a
-              :href="`mailto:${site.email}`"
-              class="flex items-center gap-4 rounded-2xl bg-white/10 p-4 ring-1 ring-white/20 transition hover:bg-white/15"
-            >
-              <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-white/15"><AppIcon name="mail" :size="22" /></span>
-              <span class="flex-1">
-                <span class="block font-bold">{{ t(ui.contact.email) }}</span>
-                <span class="block truncate text-sm text-white/75" dir="ltr">{{ site.email }}</span>
-              </span>
-            </a>
-          </div>
+        <a :href="whatsappLink()" target="_blank" rel="noopener" class="btn mt-9">{{ t(ui.contact.whatsapp) }}</a>
+
+        <div class="mt-7 flex flex-col items-start gap-3">
+          <a :href="`mailto:${site.email}`" class="link" dir="ltr">{{ site.email }}</a>
+          <a :href="whatsappLink()" target="_blank" rel="noopener" class="link" dir="ltr">{{ site.phone }}</a>
         </div>
-
-        <form class="space-y-4 rounded-3xl bg-black/10 p-5 ring-1 ring-white/15 sm:p-7" novalidate @submit.prevent="sendEmail">
-          <label class="block">
-            <span class="mb-1.5 block text-sm font-semibold text-white/85">{{ t(ui.contact.name) }}</span>
-            <input v-model="form.name" type="text" autocomplete="name" :class="field" />
-          </label>
-          <label class="block">
-            <span class="mb-1.5 block text-sm font-semibold text-white/85">{{ t(ui.contact.contactField) }}</span>
-            <input v-model="form.contact" type="text" inputmode="email" autocomplete="email" dir="ltr" :class="[field, 'rtl:text-end']" />
-          </label>
-          <label class="block">
-            <span class="mb-1.5 block text-sm font-semibold text-white/85">{{ t(ui.contact.message) }}</span>
-            <textarea v-model="form.message" rows="4" :placeholder="t(ui.contact.messagePh)" :class="[field, 'resize-none']" />
-          </label>
-
-          <p
-            v-if="notice"
-            class="rounded-xl px-4 py-3 text-sm font-medium"
-            :class="notice.ok ? 'bg-white/20 text-white' : 'bg-black/25 text-white'"
-            role="status"
-          >
-            {{ notice.text }}
-          </p>
-
-          <div class="flex flex-col gap-3 pt-1 sm:flex-row">
-            <button
-              type="submit"
-              :disabled="sending"
-              class="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-6 py-3.5 font-bold text-neutral-900 transition-opacity hover:opacity-90 disabled:opacity-60"
-            >
-              <AppIcon name="mail" :size="18" />{{ sending ? t(ui.contact.sending) : t(ui.contact.send) }}
-            </button>
-            <button
-              type="button"
-              class="inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-emerald-500 px-6 py-3.5 font-bold text-white transition-opacity hover:opacity-90"
-              @click="sendWhatsapp"
-            >
-              <AppIcon name="whatsapp" :size="18" />{{ t(ui.contact.sendWa) }}
-            </button>
-          </div>
-        </form>
       </div>
+
+      <form class="space-y-5" novalidate @submit.prevent="sendEmail">
+        <label class="block">
+          <span class="mb-2 block text-[15px] font-semibold text-ink">{{ t(ui.contact.name) }}</span>
+          <input v-model="form.name" type="text" autocomplete="name" :class="field" />
+        </label>
+        <label class="block">
+          <span class="mb-2 block text-[15px] font-semibold text-ink">{{ t(ui.contact.contactField) }}</span>
+          <input v-model="form.contact" type="text" inputmode="email" autocomplete="email" dir="ltr" :class="[field, 'rtl:text-end']" />
+        </label>
+        <label class="block">
+          <span class="mb-2 block text-[15px] font-semibold text-ink">{{ t(ui.contact.message) }}</span>
+          <textarea v-model="form.message" rows="4" :placeholder="t(ui.contact.messagePh)" :class="[field, 'resize-none']" />
+        </label>
+
+        <p
+          v-if="notice"
+          class="border-s-2 ps-4 text-[15px] text-ink"
+          :class="notice.ok ? 'border-accent' : 'border-ink'"
+          role="status"
+        >
+          {{ notice.text }}
+        </p>
+
+        <div class="flex flex-col gap-3 pt-1 sm:flex-row">
+          <button type="submit" :disabled="sending" class="btn flex-1">
+            {{ sending ? t(ui.contact.sending) : t(ui.contact.send) }}
+          </button>
+          <button type="button" class="btn btn-quiet flex-1" @click="sendWhatsapp">
+            {{ t(ui.contact.sendWa) }}
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 </template>

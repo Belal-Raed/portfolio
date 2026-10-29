@@ -10,11 +10,11 @@ const { t } = useI18n()
 <template>
   <section class="container-page py-16 md:py-24">
     <SectionTitle :title="ui.process.title" />
-    <ol class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      <li v-for="(step, i) in process" :key="i" :data-reveal="i * 0.05">
-        <p class="text-sm font-semibold text-accent">0{{ i + 1 }}</p>
-        <h3 class="mt-2 text-lg font-semibold text-ink">{{ t(step.title) }}</h3>
-        <p class="mt-2 leading-relaxed text-muted">{{ t(step.body) }}</p>
+    <ol class="grid border-b border-line md:grid-cols-2 md:gap-x-14">
+      <li v-for="(step, i) in process" :key="i" class="border-t border-line py-6">
+        <p class="text-[15px] text-muted tabular-nums">0{{ i + 1 }}</p>
+        <h3 class="mt-1 text-lg">{{ t(step.title) }}</h3>
+        <p class="mt-2 text-muted">{{ t(step.body) }}</p>
       </li>
     </ol>
   </section>

@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Belal Raed — Backend Engineer</title>
     <meta
       name="description"
       content="Belal Raed — Laravel backend engineer and co-founder of ROOT. REST APIs, queues, realtime systems, WhatsApp & AI integrations. Open to remote & freelance work."
     />
-    <meta name="theme-color" content="#F6F6F8" />
+    <meta name="theme-color" content="#0D1520" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Belal Raed — Backend Engineer" />
     <meta
@@ -20,13 +20,22 @@
     <script>
       // Apply saved theme + language before paint to avoid a flash.
       // ?lang=ar / ?theme=dark in the URL win, so a shared link opens as intended.
+      // Without a choice, follow the system and default to dark.
       try {
-        var params = new URLSearchParams(location.search)
-        var theme = params.get('theme') || localStorage.getItem('theme')
-        if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark')
+        var stored = function (key) {
+          try {
+            return localStorage.getItem(key)
+          } catch (e) {
+            return null
+          }
         }
-        if ((params.get('lang') || localStorage.getItem('locale')) === 'ar') {
+        var params = new URLSearchParams(location.search)
+        var theme = params.get('theme') || stored('theme')
+        var light = theme ? theme === 'light' : matchMedia('(prefers-color-scheme: light)').matches
+        if (!light) document.documentElement.classList.add('dark')
+        // Mirrors --bg in src/style.css; CSS isn't loaded yet at this point.
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', light ? '#EFEDE6' : '#0D1520')
+        if ((params.get('lang') || stored('locale')) === 'ar') {
           document.documentElement.lang = 'ar'
           document.documentElement.dir = 'rtl'
         }
