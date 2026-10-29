@@ -23,7 +23,7 @@ onBeforeUnmount(() => stopReveal())
 
 <template>
   <SiteHeader />
-  <main ref="main">
+  <main ref="main" class="root-line">
     <HeroSection />
     <ServicesSection />
     <ProjectsSection />
