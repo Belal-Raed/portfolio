@@ -16,12 +16,20 @@ const links = [
 </script>
 
 <template>
-  <footer class="container-page">
-    <div class="flex flex-col gap-4 border-t border-line py-8 text-sm text-muted md:flex-row md:items-center md:justify-between">
+  <footer class="container-page pb-[env(safe-area-inset-bottom)]">
+    <div class="flex flex-col gap-4 border-t border-line py-8 text-[15px] text-muted md:flex-row md:items-center md:justify-between">
       <p>© {{ year }} {{ t(ui.name) }} · {{ t(ui.footer.place) }}</p>
       <nav class="flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Footer">
-        <a v-for="link in links" :key="link.label" :href="link.href" target="_blank" rel="noopener" class="hover:text-ink">{{ link.label }}</a>
-        <a href="#top" class="hover:text-ink" @click.prevent="scrollToTarget('#top')">↑ {{ t(ui.footer.top) }}</a>
+        <a
+          v-for="link in links"
+          :key="link.label"
+          :href="link.href"
+          target="_blank"
+          rel="noopener"
+          class="transition-colors duration-150 hover:text-ink"
+          >{{ link.label }}</a
+        >
+        <a href="#top" class="transition-colors duration-150 hover:text-ink" @click.prevent="scrollToTarget('#top')">↑ {{ t(ui.footer.top) }}</a>
       </nav>
     </div>
   </footer>
