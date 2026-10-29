@@ -71,7 +71,7 @@ const field =
 
 <template>
   <section id="contact" class="container-page py-16 md:py-24">
-    <div data-reveal class="grid gap-12 border-t border-line pt-10 md:grid-cols-2 md:gap-14 md:pt-14">
+    <div class="grid gap-12 border-t border-line pt-10 md:grid-cols-2 md:gap-14 md:pt-14">
       <div>
         <h2 class="tick text-[clamp(2.1rem,4.6vw,3.4rem)]">{{ t(ui.contact.title) }}</h2>
         <p class="mt-5 text-lg text-muted">{{ t(ui.contact.subtitle) }}</p>

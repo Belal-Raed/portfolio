@@ -37,10 +37,6 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-on-accent: var(--on-accent);
-  /* Legacy names, removed once every component is restyled. */
-  --color-surface-2: var(--surface);
-  --color-text: var(--text);
-  --color-accent-ink: var(--on-accent);
 
   /* Latin glyphs from the grotesks, Arabic from IBM Plex Sans Arabic. */
   --font-sans: 'Hanken Grotesk Variable', 'IBM Plex Sans Arabic', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -180,6 +176,28 @@ html.lenis body {
   }
 }
 
+/* ---------- Motion ---------- */
+/* The only animation on the page: the hero accent bar draws in once. */
+@keyframes hero-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@utility hero-bar {
+  transform-origin: left;
+  animation: hero-bar 0.7s ease-out 0.25s both;
+  [dir='rtl'] & {
+    transform-origin: right;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
 /* ---------- Components ---------- */
 @utility btn {
   display: inline-flex;
@@ -241,5 +259,8 @@ html.lenis body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+  html {
+    scroll-behavior: auto !important;
   }
 }

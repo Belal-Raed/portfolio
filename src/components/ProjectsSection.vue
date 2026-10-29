@@ -16,7 +16,6 @@ const { t } = useI18n()
         v-for="project in projects"
         :id="project.id"
         :key="project.id"
-        data-reveal
         class="grid gap-4 border-t border-line py-8 md:grid-cols-[1fr_2.2fr_1fr] md:gap-10 md:py-10"
       >
         <div class="text-[15px]">
